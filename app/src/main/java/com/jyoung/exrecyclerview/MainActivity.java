@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(linear);
                 break;
             case R.id.btn_grid:
+                Intent grid = new Intent(this, GridActivity.class);
+                startActivity(grid);
                 break;
         }
     }
