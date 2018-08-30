@@ -8,8 +8,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.jyoung.exrecyclerview.adapter.LinearAdapter;
 import com.jyoung.exrecyclerview.databinding.ActivityLinearBinding;
 import com.jyoung.exrecyclerview.model.DummyData;
+import com.jyoung.exrecyclerview.viewmodel.ListViewModel;
 
 public class LinearActivity extends AppCompatActivity {
+    private final ListViewModel viewModel = new ListViewModel();
     private ActivityLinearBinding binding;
 
     @Override
@@ -29,6 +31,7 @@ public class LinearActivity extends AppCompatActivity {
         binding.rvLinear.setAdapter(new LinearAdapter());
 
         // set items
-        binding.setItems(DummyData.items);
+        binding.setViewModel(viewModel);
+        viewModel.setItems(DummyData.items);
     }
 }
