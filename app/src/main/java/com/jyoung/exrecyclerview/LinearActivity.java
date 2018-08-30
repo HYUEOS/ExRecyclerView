@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.jyoung.exrecyclerview.adapter.ListAdapter;
+import com.jyoung.exrecyclerview.adapter.LinearAdapter;
 import com.jyoung.exrecyclerview.model.DummyData;
 
 public class LinearActivity extends AppCompatActivity {
@@ -27,6 +27,6 @@ public class LinearActivity extends AppCompatActivity {
           */
         rvLinear.setLayoutManager(new LinearLayoutManager(this));
         /** 마찬가지로 adapter 도 까먹으면 안 됨 **/
-        rvLinear.setAdapter(new ListAdapter(DummyData.items));
+        rvLinear.setAdapter(new LinearAdapter(DummyData.items));
     }
 }
