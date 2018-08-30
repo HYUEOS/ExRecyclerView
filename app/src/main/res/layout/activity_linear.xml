@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jyoung.exrecyclerview.LinearActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_linear"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-</android.support.constraint.ConstraintLayout>
+    <data>
+        <import
+            alias="ListItem"
+            type="com.jyoung.exrecyclerview.model.ListItem" />
+
+        <variable
+            name="items"
+            type="java.util.ArrayList&lt;ListItem>" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.jyoung.exrecyclerview.LinearActivity">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_linear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:items="@{items}"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
+
