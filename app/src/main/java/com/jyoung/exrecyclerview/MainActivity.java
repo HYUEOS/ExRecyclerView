@@ -14,10 +14,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /** initialize views **/
+        // initialize views
         btnLinear = findViewById(R.id.btn_linear);
         btnGrid = findViewById(R.id.btn_grid);
 
+        // set onclick listener
         btnLinear.setOnClickListener(this);
         btnGrid.setOnClickListener(this);
     }
