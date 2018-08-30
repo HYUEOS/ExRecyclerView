@@ -23,6 +23,7 @@ public abstract class GridDataViewHolder extends ListBaseViewHolder<ListData>  {
     @Override
     public void setData(ListData item) {
         binding.setItem(item);
+        binding.setViewholder(this);
         binding.executePendingBindings();
     }
 
