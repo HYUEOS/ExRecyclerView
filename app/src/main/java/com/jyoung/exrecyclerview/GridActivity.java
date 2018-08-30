@@ -8,8 +8,10 @@ import android.support.v7.widget.GridLayoutManager;
 import com.jyoung.exrecyclerview.adapter.GridAdapter;
 import com.jyoung.exrecyclerview.databinding.ActivityGridBinding;
 import com.jyoung.exrecyclerview.model.DummyData;
+import com.jyoung.exrecyclerview.viewmodel.ListViewModel;
 
 public class GridActivity extends AppCompatActivity {
+    private final ListViewModel viewModel = new ListViewModel();
     private ActivityGridBinding binding;
 
     @Override
@@ -39,6 +41,7 @@ public class GridActivity extends AppCompatActivity {
         });
 
         // set items
-        binding.setItems(DummyData.items);
+        binding.setViewModel(viewModel);
+        viewModel.setItems(DummyData.items);
     }
 }
