@@ -32,6 +32,10 @@ public abstract class ListItemViewModel {
         });
     }
 
+    public void setItem(ListData item) {
+        observableItem.set(item);
+    }
+
     @Nullable
     public ListData getItem() {
         return observableItem.get();
