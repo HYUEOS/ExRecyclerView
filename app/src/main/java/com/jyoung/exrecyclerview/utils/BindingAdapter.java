@@ -1,7 +1,9 @@
 package com.jyoung.exrecyclerview.utils;
 
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.jyoung.exrecyclerview.adapter.ListAdapter;
 import com.jyoung.exrecyclerview.model.ListItem;
 
@@ -20,5 +22,13 @@ public class BindingAdapter {
         final ListAdapter adapter = (ListAdapter) recyclerView.getAdapter();
 
         adapter.setItems(items);
+    }
+
+    @android.databinding.BindingAdapter("imageResource")
+    public static void bindImageResource(ImageView imageView, int imageResource) {
+        if (imageView == null) return;
+
+        Glide.with(imageView.getContext().getApplicationContext())
+                .load(imageResource).into(imageView);
     }
 }
