@@ -29,8 +29,4 @@ public class LinearDataViewHolder extends ListBaseViewHolder<ListData>  {
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
     }
-
-    public void clickItem(ListData item) {
-
-    }
 }
