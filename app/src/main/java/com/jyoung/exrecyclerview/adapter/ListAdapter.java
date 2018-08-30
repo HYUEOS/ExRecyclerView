@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 
 public abstract class ListAdapter extends RecyclerView.Adapter<ListBaseViewHolder> {
-    private ArrayList<ListItem> items;
+    protected ArrayList<ListItem> items;
 
     protected final int TYPE_HEADER = 0;
     protected final int TYPE_TOAST = 1;
