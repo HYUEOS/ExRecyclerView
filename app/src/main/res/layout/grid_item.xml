@@ -4,19 +4,15 @@
 
     <data>
         <variable
-            name="viewholder"
-            type="com.jyoung.exrecyclerview.adapter.viewholder.GridDataViewHolder" />
-
-        <variable
-            name="item"
-            type="com.jyoung.exrecyclerview.model.ListData" />
+            name="viewModel"
+            type="com.jyoung.exrecyclerview.viewmodel.ListItemViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:onClick="@{(view) -> viewholder.clickItem(item)}">
+        android:onClick="@{(view) -> viewModel.clickItem(view)}">
 
         <ImageView
             android:id="@+id/iv_item"
@@ -26,7 +22,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:scaleType="centerCrop"
-            app:imageResource="@{item.iconResource}"
+            app:imageResource="@{viewModel.iconResource}"
             app:layout_constraintDimensionRatio="5:4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +36,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@{item.title}"
+            android:text="@{viewModel.title}"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"

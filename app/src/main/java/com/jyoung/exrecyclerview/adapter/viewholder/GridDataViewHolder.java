@@ -1,31 +1,28 @@
 package com.jyoung.exrecyclerview.adapter.viewholder;
 
-import android.content.Context;
-
 import com.jyoung.exrecyclerview.databinding.GridItemBinding;
 import com.jyoung.exrecyclerview.model.ListData;
+import com.jyoung.exrecyclerview.viewmodel.ListItemViewModel;
 
 /**
  * Created by Jyoung on 2018. 8. 30..
  */
 
-public abstract class GridDataViewHolder extends ListBaseViewHolder<ListData>  {
+public class GridDataViewHolder extends ListBaseViewHolder<ListData>  {
     private final GridItemBinding binding;
-    protected final Context context;
+    private final ListItemViewModel viewModel;
 
-    public GridDataViewHolder(GridItemBinding binding) {
+    public GridDataViewHolder(GridItemBinding binding, ListItemViewModel viewModel) {
         super(binding.getRoot());
 
         this.binding = binding;
-        this.context = binding.getRoot().getContext();
+        this.viewModel = viewModel;
     }
 
     @Override
     public void setData(ListData item) {
-        binding.setItem(item);
-        binding.setViewholder(this);
+        viewModel.setItem(item);
+        binding.setViewModel(viewModel);
         binding.executePendingBindings();
     }
-
-    public abstract void clickItem(ListData item);
 }

@@ -6,14 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jyoung.exrecyclerview.R;
-import com.jyoung.exrecyclerview.adapter.viewholder.GridDialogViewHolder;
-import com.jyoung.exrecyclerview.adapter.viewholder.GridSnackbarViewHolder;
-import com.jyoung.exrecyclerview.adapter.viewholder.GridToastViewHolder;
+import com.jyoung.exrecyclerview.adapter.viewholder.GridDataViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListBaseViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListHeaderViewHolder;
 import com.jyoung.exrecyclerview.databinding.GridItemBinding;
 import com.jyoung.exrecyclerview.model.ListHeader;
 import com.jyoung.exrecyclerview.model.ListItem;
+import com.jyoung.exrecyclerview.viewmodel.ListDialogViewModel;
+import com.jyoung.exrecyclerview.viewmodel.ListItemViewModel;
+import com.jyoung.exrecyclerview.viewmodel.ListSnackbarViewModel;
+import com.jyoung.exrecyclerview.viewmodel.ListToastViewModel;
 
 /**
  * Created by Jyoung on 2018. 8. 30..
@@ -35,14 +37,18 @@ public class GridAdapter extends ListAdapter {
     public ListBaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         final GridItemBinding binding = GridItemBinding.inflate(inflater, parent, false);
+        ListItemViewModel viewModel;
 
         switch (viewType) {
             case TYPE_TOAST:
-                return new GridToastViewHolder(binding);
+                viewModel = new ListToastViewModel();
+                return new GridDataViewHolder(binding, viewModel);
             case TYPE_SNACK:
-                return new GridSnackbarViewHolder(binding);
+                viewModel = new ListSnackbarViewModel();
+                return new GridDataViewHolder(binding, viewModel);
             case TYPE_DIALOG:
-                return new GridDialogViewHolder(binding);
+                viewModel = new ListDialogViewModel();
+                return new GridDataViewHolder(binding, viewModel);
             default:
                 View view = inflater.inflate(R.layout.list_header, parent, false);
                 return new ListHeaderViewHolder(view);
