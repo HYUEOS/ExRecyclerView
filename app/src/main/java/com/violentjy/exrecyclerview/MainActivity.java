@@ -1,5 +1,6 @@
 package com.violentjy.exrecyclerview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.btn_linear:
+                Intent linear = new Intent(this, LinearActivity.class);
+                startActivity(linear);
                 break;
             case R.id.btn_grid:
                 break;
