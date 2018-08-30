@@ -17,12 +17,12 @@ public class ListItemViewHolder extends ListBaseViewHolder<ListData> {
     private final ImageView ivIcon;
     private final TextView tvTitle;
 
-    private final Context context;
+    protected final Context context;
 
     public ListItemViewHolder(View itemView) {
         super(itemView);
 
-        context = itemView.getContext().getApplicationContext();
+        context = itemView.getContext();
 
         // initialize views
         ivIcon = itemView.findViewById(R.id.iv_item);
@@ -35,6 +35,6 @@ public class ListItemViewHolder extends ListBaseViewHolder<ListData> {
     }
 
     protected void setIcon(int resourceId) {
-        Glide.with(context).load(resourceId).into(ivIcon);
+        Glide.with(context.getApplicationContext()).load(resourceId).into(ivIcon);
     }
 }
