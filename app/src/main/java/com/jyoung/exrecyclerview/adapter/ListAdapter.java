@@ -10,11 +10,11 @@ import com.jyoung.exrecyclerview.R;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListBaseViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListDialogViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListHeaderViewHolder;
-import com.jyoung.exrecyclerview.adapter.viewholder.ListSnackBarViewHolder;
+import com.jyoung.exrecyclerview.adapter.viewholder.ListSnackbarViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListToastViewHolder;
 import com.jyoung.exrecyclerview.model.ListDialog;
 import com.jyoung.exrecyclerview.model.ListItem;
-import com.jyoung.exrecyclerview.model.ListSnackBar;
+import com.jyoung.exrecyclerview.model.ListSnackbar;
 import com.jyoung.exrecyclerview.model.ListToast;
 
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListBaseViewHolder> {
                 return new ListToastViewHolder(view);
             case TYPE_SNACK:
                 view = inflater.inflate(R.layout.linear_item, parent, false);
-                return new ListSnackBarViewHolder(view);
+                return new ListSnackbarViewHolder(view);
             case TYPE_DIALOG:
                 view = inflater.inflate(R.layout.linear_item, parent, false);
                 return new ListDialogViewHolder(view);
@@ -62,7 +62,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListBaseViewHolder> {
         if (items == null || position < 0 || position >= getItemCount()) return;
 
         final ListItem item = items.get(position);
-        
+
         if (item == null) return;
 
         holder.itemView.setTag(item);
@@ -77,7 +77,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListBaseViewHolder> {
 
         if (item instanceof ListToast) {
             return TYPE_TOAST;
-        } else if (item instanceof ListSnackBar) {
+        } else if (item instanceof ListSnackbar) {
             return TYPE_SNACK;
         } else if (item instanceof ListDialog) {
             return TYPE_DIALOG;
