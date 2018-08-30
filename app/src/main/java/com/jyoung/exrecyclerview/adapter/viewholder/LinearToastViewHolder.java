@@ -4,6 +4,7 @@ import android.widget.Toast;
 
 import com.jyoung.exrecyclerview.databinding.LinearItemBinding;
 import com.jyoung.exrecyclerview.model.ListData;
+import com.jyoung.exrecyclerview.viewmodel.ListToastViewModel;
 
 /**
  * Created by Jyoung on 2018. 8. 30..
@@ -11,7 +12,7 @@ import com.jyoung.exrecyclerview.model.ListData;
 
 public class LinearToastViewHolder extends LinearDataViewHolder {
     public LinearToastViewHolder(LinearItemBinding binding) {
-        super(binding);
+        super(binding, new ListToastViewModel());
     }
 
     @Override

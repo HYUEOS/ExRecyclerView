@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.jyoung.exrecyclerview.databinding.LinearItemBinding;
 import com.jyoung.exrecyclerview.model.ListData;
+import com.jyoung.exrecyclerview.viewmodel.ListDialogViewModel;
 
 /**
  * Created by Jyoung on 2018. 8. 30..
@@ -12,7 +13,7 @@ import com.jyoung.exrecyclerview.model.ListData;
 
 public class LinearDialogViewHolder extends LinearDataViewHolder {
     public LinearDialogViewHolder(LinearItemBinding binding) {
-        super(binding);
+        super(binding, new ListDialogViewModel());
     }
 
     @Override
