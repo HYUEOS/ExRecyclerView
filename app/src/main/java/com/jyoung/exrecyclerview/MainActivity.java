@@ -1,39 +1,32 @@
 package com.jyoung.exrecyclerview;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnLinear, btnGrid;
+import com.jyoung.exrecyclerview.databinding.ActivityMainBinding;
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        // initialize views
-        btnLinear = findViewById(R.id.btn_linear);
-        btnGrid = findViewById(R.id.btn_grid);
-
-        // set onclick listener
-        btnLinear.setOnClickListener(this);
-        btnGrid.setOnClickListener(this);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setActivity(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch(view.getId()) {
-            case R.id.btn_linear:
-                Intent linear = new Intent(this, LinearActivity.class);
-                startActivity(linear);
-                break;
-            case R.id.btn_grid:
-                Intent grid = new Intent(this, GridActivity.class);
-                startActivity(grid);
-                break;
-        }
+    public void redirectLinear() {
+        Intent linear = new Intent(this, LinearActivity.class);
+        startActivity(linear);
+    }
+
+    public void redirectGrid() {
+        Intent grid = new Intent(this, GridActivity.class);
+        startActivity(grid);
     }
 }
