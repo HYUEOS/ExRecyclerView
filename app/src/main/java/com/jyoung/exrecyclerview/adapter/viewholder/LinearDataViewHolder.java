@@ -1,7 +1,5 @@
 package com.jyoung.exrecyclerview.adapter.viewholder;
 
-import android.content.Context;
-
 import com.jyoung.exrecyclerview.databinding.LinearItemBinding;
 import com.jyoung.exrecyclerview.model.ListData;
 import com.jyoung.exrecyclerview.viewmodel.ListItemViewModel;
@@ -13,14 +11,12 @@ import com.jyoung.exrecyclerview.viewmodel.ListItemViewModel;
 public class LinearDataViewHolder extends ListBaseViewHolder<ListData>  {
     private final LinearItemBinding binding;
     private final ListItemViewModel viewModel;
-    protected final Context context;
 
     public LinearDataViewHolder(LinearItemBinding binding, ListItemViewModel viewModel) {
         super(binding.getRoot());
 
         this.binding = binding;
         this.viewModel = viewModel;
-        this.context = binding.getRoot().getContext();
     }
 
     @Override
