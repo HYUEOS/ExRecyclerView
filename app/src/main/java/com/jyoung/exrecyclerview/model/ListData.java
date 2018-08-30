@@ -6,10 +6,12 @@ package com.jyoung.exrecyclerview.model;
 
 public class ListData extends ListItem {
     private String title, message;
+    private int iconResource;
 
-    public ListData(String title, String message) {
+    public ListData(String title, String message, int iconResource) {
         this.title = title;
         this.message = message;
+        this.iconResource = iconResource;
     }
 
     public String getTitle() {
@@ -26,5 +28,13 @@ public class ListData extends ListItem {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public int getIconResource() {
+        return iconResource;
+    }
+
+    public void setIconResource(int iconResource) {
+        this.iconResource = iconResource;
     }
 }
