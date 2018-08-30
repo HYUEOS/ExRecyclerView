@@ -1,4 +1,4 @@
-package com.violentjy.exrecyclerview;
+package com.jyoung.exrecyclerview;
 
 import org.junit.Test;
 

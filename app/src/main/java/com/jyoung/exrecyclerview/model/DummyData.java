@@ -1,4 +1,4 @@
-package com.violentjy.exrecyclerview.model;
+package com.jyoung.exrecyclerview.model;
 
 import java.util.ArrayList;
 

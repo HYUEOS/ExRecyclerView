@@ -1,4 +1,4 @@
-package com.violentjy.exrecyclerview;
+package com.jyoung.exrecyclerview;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

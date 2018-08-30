@@ -1,4 +1,4 @@
-package com.violentjy.exrecyclerview;
+package com.jyoung.exrecyclerview;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
