@@ -11,19 +11,12 @@ import com.jyoung.exrecyclerview.adapter.viewholder.ListDialogViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListHeaderViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListSnackbarViewHolder;
 import com.jyoung.exrecyclerview.adapter.viewholder.ListToastViewHolder;
-import com.jyoung.exrecyclerview.model.ListItem;
-
-import java.util.ArrayList;
 
 /**
  * Created by Jyoung on 2018. 8. 30..
  */
 
 public class LinearAdapter extends ListAdapter {
-    public LinearAdapter(ArrayList<ListItem> items) {
-        super(items);
-    }
-
     @NonNull
     @Override
     public ListBaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -27,6 +27,6 @@ public class LinearActivity extends AppCompatActivity {
           */
         rvLinear.setLayoutManager(new LinearLayoutManager(this));
         /** 마찬가지로 adapter 도 까먹으면 안 됨 **/
-        rvLinear.setAdapter(new LinearAdapter(DummyData.items));
+        rvLinear.setAdapter(new LinearAdapter());
     }
 }

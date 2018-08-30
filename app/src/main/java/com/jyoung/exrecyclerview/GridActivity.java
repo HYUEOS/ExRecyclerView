@@ -6,7 +6,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.jyoung.exrecyclerview.adapter.GridAdapter;
-import com.jyoung.exrecyclerview.model.DummyData;
 
 public class GridActivity extends AppCompatActivity {
     private RecyclerView rvGrid;
@@ -28,7 +27,7 @@ public class GridActivity extends AppCompatActivity {
         final GridLayoutManager manager = new GridLayoutManager(this, 2);
         rvGrid.setLayoutManager(manager);
         /** 마찬가지로 adapter 도 까먹으면 안 됨 **/
-        final GridAdapter adapter = new GridAdapter(DummyData.items);
+        final GridAdapter adapter = new GridAdapter();
         rvGrid.setAdapter(adapter);
 
         // set header for grid layout manager

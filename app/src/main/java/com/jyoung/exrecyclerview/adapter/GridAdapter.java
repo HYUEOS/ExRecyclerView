@@ -14,17 +14,11 @@ import com.jyoung.exrecyclerview.adapter.viewholder.ListToastViewHolder;
 import com.jyoung.exrecyclerview.model.ListHeader;
 import com.jyoung.exrecyclerview.model.ListItem;
 
-import java.util.ArrayList;
-
 /**
  * Created by Jyoung on 2018. 8. 30..
  */
 
 public class GridAdapter extends ListAdapter {
-    public GridAdapter(ArrayList<ListItem> items) {
-        super(items);
-    }
-
     public boolean isHeader(int position) {
         if (items == null || position < 0 || position >= getItemCount()) return true;
 

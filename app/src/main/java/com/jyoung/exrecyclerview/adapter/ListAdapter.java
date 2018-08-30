@@ -23,8 +23,13 @@ public abstract class ListAdapter extends RecyclerView.Adapter<ListBaseViewHolde
     protected final int TYPE_SNACK = 2;
     protected final int TYPE_DIALOG = 3;
 
-    public ListAdapter(ArrayList<ListItem> items) {
+    public ListAdapter() {
+        this.items = new ArrayList<>();
+    }
+
+    public void setItems(ArrayList<ListItem> items) {
         this.items = items;
+        notifyDataSetChanged();
     }
 
     @Override
